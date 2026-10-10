@@ -1,0 +1,12 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "2fagg",
+  "account_id": "550a2aad506575e75ab47c4c42402b79",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-10-10",
+  "workers_dev": true,
+  "send_metrics": false,
+  "observability": { "enabled": false },
+  "d1_databases": [{ "binding": "DB", "database_name": "phantom2fa", "database_id": "14b52033-80ff-4817-b7fd-aed44136abd3", "migrations_dir": "migrations" }],
+  "ratelimits": [{ "name": "REQUEST_LIMITER", "namespace_id": "726201", "simple": { "limit": 30, "period": 60 } }]
+}

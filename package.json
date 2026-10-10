@@ -1,0 +1,22 @@
+{
+  "name": "phantom2fa",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.test.ts",
+    "typecheck": "tsc --noEmit",
+    "check:deploy": "wrangler deploy --dry-run --outdir .dry-run",
+    "test:runtime": "npm run check:deploy && node scripts/runtime-smoke.mjs",
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "keys": "node scripts/generate-keys.mjs"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20261006.1",
+    "@types/node": "^24.0.0",
+    "miniflare": "5.20261006.1-alpha",
+    "typescript": "^5.9.0",
+    "wrangler": "^4.0.0"
+  }
+}
