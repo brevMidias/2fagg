@@ -1,5 +1,5 @@
 import { decodeSecret, decryptSecret, encryptSecret, tokenHash, totp } from './crypto.ts';
-import { html, css, script } from './page.ts';
+import { html, css, purchaseCss, script } from './page.ts';
 
 export interface Env {
   DB: D1Database;
@@ -95,7 +95,7 @@ export default {
       const url=new URL(request.url);
       if(url.search) return error(400);
       if(request.method==='GET' && ['/c','/app.js','/style.css'].includes(url.pathname)) {
-        const content=url.pathname==='/c' ? html : url.pathname==='/app.js' ? script : css;
+        const content=url.pathname==='/c' ? html : url.pathname==='/app.js' ? script : css+purchaseCss;
         const type=url.pathname==='/c' ? 'text/html' : url.pathname==='/app.js' ? 'text/javascript' : 'text/css';
         return new Response(content,{headers:{...privacyHeaders,'Content-Type':type+'; charset=utf-8'}});
       }

@@ -1,5 +1,7 @@
 # Phantom2FA
 
+A página de códigos exibe no topo uma faixa de agradecimento: **✅ OBRIGADO PELA COMPRA!** e **Deixa uma avaliação para dar uma moral? :)**. O destaque verde é responsivo e usa apenas HTML/CSS locais (`src/page.ts`), acima do painel 2FA.
+
 Serviço independente para códigos TOTP de seis dígitos, período de 30 segundos e HMAC-SHA1. Recebe somente segredo TOTP, UUID externo aleatório e token de acesso aleatório. O link `https://<worker>/c#<token>` funciona sem o PC depois da confirmação da API. Quem possui esse link pode consultar o código daquela entrada; nenhum PIN é pedido.
 
 Publicado em 2026-10-10 em **https://2fagg.hostbrev0.workers.dev**, na Cloudflare Workers com D1. Criação, código TOTP, revogação e rejeição de operações atrasadas foram verificados remotamente com segredo sintético. Chaves administrativas e de cifragem ficam fora do Git; nenhum segredo de conta real foi usado nesse teste.
